@@ -2,6 +2,8 @@
 
 Built with React.
 
+An image board where you can share with others what you like. Users will be able to submit posts, and like other's post on this simple sharing. Clicking on a post from either the user's page, or from the front page will show additional information.
+
 ## Front page should show all posts
 * Navbar
   * User profile tag
