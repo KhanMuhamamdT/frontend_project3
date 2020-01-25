@@ -1,4 +1,4 @@
-# Frontend
+# Not Pinterest | Frontend
 
 Built with React.
 
