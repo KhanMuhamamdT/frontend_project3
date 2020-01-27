@@ -11,6 +11,7 @@ const HomePage = () => {
       <Switch>
         {/* <Route path="/" component={NavBar} /> */}
         <Route exact path="/HomePage" component={Gallery} />
+        <Route exact path="/create-post" component={CreatePost} />
       </Switch>
 
       <h1>This is a project-3</h1>
