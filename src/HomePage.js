@@ -5,21 +5,18 @@ import CreatePost from "./CreatePost";
 import CreateUser from "./CreateUser";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
-import CreatePost from "./CreatePost";
 
 const HomePage = () => {
   return (
     <BrowserRouter className="container">
       <NavBar />
-      <Switch>
-        {/* <Route path="/" component={NavBar} /> */}
-        <div className="row">
-          <Route exact path="/" component={Gallery} />
-        </div>
+      {/* <Route path="/" component={NavBar} /> */}
+      <div className="row">
+        <Route exact path="/" component={Gallery} />
+      </div>
 
-        <Route exact path="/create-post" component={CreatePost} />
-        <Route exact path="/create-user" component={CreateUser} />
-      </Switch>
+      <Route exact path="/create-post" component={CreatePost} />
+      <Route exact path="/create-user" component={CreateUser} />
 
       {/* <h1>This is a project-3</h1>
       <h3>Arty, Aldo, Shahzad and Muhammad</h3>
