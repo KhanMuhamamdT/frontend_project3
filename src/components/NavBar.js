@@ -5,18 +5,27 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <nav className="Nav-bar">
-      <NavLink exact activeClassName="active" className="Nav-item" to="/">
-        <h4>Home</h4>
+    <nav className="nav">
+      <h4 className="nav-item nav-link">Not Pinterest</h4>
+      <NavLink exact className="nav-item nav-link" to="/user">
+        {" "}
+        <img
+          src="https://www.telegraph.co.uk/content/dam/men/2016/05/24/Untitled-1-xlarge_trans++qVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg"
+          height="30px"
+        />{" "}
+        User
       </NavLink>
-      <NavLink activeClassName="active" className="Nav-item" to="/random">
-        <h4>Random</h4>
+      <NavLink exact className="nav-item nav-link" to="/">
+        Home
       </NavLink>
-      <NavLink activeClassName="active" className="Nav-item" to="/create-post">
-        <h4>Post</h4>
+      <NavLink className="nav-item nav-link" to="/random">
+        Random
       </NavLink>
-      <NavLink activeClassName="active" className="Nav-item" to="/create-user">
-        <h4>SignUp</h4>
+      <NavLink className="nav-item nav-link" to="/create-post">
+        Post
+      </NavLink>
+      <NavLink className="nav-item nav-link" to="/create-user">
+        SignUp
       </NavLink>
       {/* <Search searchFunc={searchFunc.searchFunc} /> */}
     </nav>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 
 const CreatePost = (props) => {
@@ -42,3 +43,12 @@ const handleDescription = (e) => {
     )
 }
 export default CreatePost;
+=======
+import React from "react";
+
+const CreatePost = () => {
+  return <div>Create Post Page</div>;
+};
+
+export default CreatePost;
+>>>>>>> cdd4cdba7af7491d43e51a1a59e2e266ca071646
