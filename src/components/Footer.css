@@ -1,13 +1,14 @@
 .footerStyle {
   text-align: "center";
-  background-color: #543c52;
-  color: "beige";
-  margin-top: -10px;
+  background-color: slategray;
+  color: white;
+  flex-shrink: 0;
+  margin-top: auto;
   padding: 20px;
   position: relative;
   height: 20px;
   clear: both;
-  font-family: "worker, sans-serif";
+  /* font-family: "worker, sans-serif"; */
   font-weight: 200;
   font-size: 2vw;
 }
