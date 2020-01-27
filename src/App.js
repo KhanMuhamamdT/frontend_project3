@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 //import logo from './logo.svg';
-
-import './App.css';
-import HomePage from './HomePage';
+// import './App.css';
+import HomePage from "./HomePage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -22,7 +21,7 @@ function App() {
         </a>
       </header> */}
 
-      <HomePage/>
+      <HomePage />
     </div>
   );
 }
