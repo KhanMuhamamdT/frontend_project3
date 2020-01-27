@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
+import CreatePost from "./CreatePost";
 
 const HomePage = () => {
   return (
