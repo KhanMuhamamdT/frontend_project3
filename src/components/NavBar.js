@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// import "./NavBar.css";
+import "./NavBar.css";
 
-import Search from "../Search/Search";
+// import Search from "../Search/Search";
 
 function NavBar() {
   return (

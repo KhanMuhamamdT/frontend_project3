@@ -1,0 +1,13 @@
+.footerStyle {
+  text-align: "center";
+  background-color: #543c52;
+  color: "beige";
+  margin-top: -10px;
+  padding: 20px;
+  position: relative;
+  height: 20px;
+  clear: both;
+  font-family: "worker, sans-serif";
+  font-weight: 200;
+  font-size: 2vw;
+}
