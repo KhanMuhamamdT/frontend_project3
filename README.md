@@ -4,9 +4,10 @@ Built with React.
 
 An image board where you can share with others what you like. Users will be able to submit posts, and like other's post on this simple sharing. Clicking on a post from either the user's page, or from the front page will show additional information.
 
-## Wireframe
+## Wireframe & Structure
 
-URL: https://xd.adobe.com/view/d5ed4b59-83ac-4840-681f-43b3896727c1-a3dc/
+Wireframe URL: https://xd.adobe.com/view/d5ed4b59-83ac-4840-681f-43b3896727c1-a3dc/  
+Structure URL: https://docs.google.com/document/d/1bbV4VW4IndiouXbB9vjXkwAo2tvQkyd6Z8ObEcJkSL0/edit?usp=sharing
 
 ## Front page should show all posts
 
