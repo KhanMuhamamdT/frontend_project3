@@ -1,0 +1,31 @@
+.Nav-bar {
+  display: flex;
+  background-color: slategray;
+  color: white;
+  justify-content: space-around;
+}
+.Nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
+  justify-content: space-around;
+  background-color: lightgrey;
+  align-items: center;
+}
+
+.Nav-item {
+  flex-grow: 1;
+  /* flex-wrap: wrap; */
+  /* padding: 0 0 0 20px; */
+  font-family: worker, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 120%;
+  color: #361d32;
+}
+
+.active {
+  /* color: #942c27; */
+  background-color: #543c52;
+  color: beige;
+}
