@@ -21,7 +21,7 @@ const CreatePost = props => {
   };
 
   return (
-    <div className="">
+    <div className="container">
       <h1>Posting Something</h1>
 
       <form onSubmit={props.handleSubmit}>
@@ -54,5 +54,4 @@ const CreatePost = props => {
     </div>
   );
 };
-
 export default CreatePost;
