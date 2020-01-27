@@ -19,8 +19,8 @@ function NavBar() {
       </NavLink>
       <NavLink activeClassName="active" className="Nav-item" to="/shots">
         <h4>Shots</h4>
-      {/* </NavLink>
-      <Search searchFunc={searchFunc.searchFunc} /> */}
+      </NavLink>
+      {/* <Search searchFunc={searchFunc.searchFunc} /> */}
     </nav>
   );
 }
