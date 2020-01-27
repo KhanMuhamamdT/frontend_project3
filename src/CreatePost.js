@@ -22,35 +22,37 @@ const CreatePost = props => {
 
   return (
     <div className="container">
-      <h1>Posting Something</h1>
+      <div className="shadow-sm p-3">
+        <h1>Create a post...</h1>
 
-      <form onSubmit={props.handleSubmit}>
-        <label htmlform="title">Title:</label>
-        <input
-          className="input"
-          value={title}
-          type="text"
-          onChange={e => handleTitle(e)}
-        ></input>
+        <form onSubmit={props.handleSubmit}>
+          <label htmlform="title">Title:</label>
+          <input
+            className="input"
+            value={title}
+            type="text"
+            onChange={e => handleTitle(e)}
+          ></input>
 
-        <label htmlform="url">URL:</label>
-        <input
-          className="input"
-          value={url}
-          type="text"
-          onChange={e => handleURL(e)}
-        ></input>
+          <label htmlform="url">URL:</label>
+          <input
+            className="input"
+            value={url}
+            type="text"
+            onChange={e => handleURL(e)}
+          ></input>
 
-        <label htmlform="Description">Description:</label>
-        <input
-          className="input"
-          value={description}
-          type="text"
-          onChange={e => handleDescription(e)}
-        ></input>
+          <label htmlform="Description">Description:</label>
+          <input
+            className="input"
+            value={description}
+            type="text"
+            onChange={e => handleDescription(e)}
+          ></input>
 
-        <button className="btn">SUBMIT</button>
-      </form>
+          <button className="btn">SUBMIT</button>
+        </form>
+      </div>
     </div>
   );
 };

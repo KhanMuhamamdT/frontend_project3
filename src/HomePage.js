@@ -14,7 +14,6 @@ const HomePage = () => {
       <div className="row">
         <Route exact path="/" component={Gallery} />
       </div>
-
       <Route exact path="/create-post" component={CreatePost} />
       <Route exact path="/create-user" component={CreateUser} />
 
