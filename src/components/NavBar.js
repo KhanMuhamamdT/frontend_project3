@@ -23,10 +23,10 @@ function NavBar() {
         Random
       </NavLink>
       <NavLink className="nav-item nav-link" to="/create-post">
-        Post
+        Create a Post
       </NavLink>
       <NavLink className="nav-item nav-link" to="/create-user">
-        SignUp
+        Create a User
       </NavLink>
       {/* <Search searchFunc={searchFunc.searchFunc} /> */}
     </nav>
