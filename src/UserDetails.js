@@ -2,7 +2,7 @@ import React from "react";
 
 import "./App.css";
 
-function ProfileDetails() {
+function UserDetails() {
   return (
     <div>
       <div>User</div>
@@ -12,4 +12,4 @@ function ProfileDetails() {
   );
 }
 
-export default ProfileDetails;
+export default UserDetails;

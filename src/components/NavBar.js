@@ -12,6 +12,7 @@ function NavBar() {
           <img
             className="avatar-img"
             src="https://www.telegraph.co.uk/content/dam/men/2016/05/24/Untitled-1-xlarge_trans++qVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg"
+            alt=""
           />
         </div>
       </NavLink>

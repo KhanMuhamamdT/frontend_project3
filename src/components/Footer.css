@@ -1,15 +1,16 @@
-.footerStyle {
-  text-align: "center";
+.footer-style {
+  text-align: center;
   background-color: slategray;
   color: white;
-  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  /* flex-shrink: 0; */
   /* margin-top: auto; */
-  padding: 20px;
-  position: relative;
-  top: 50vh;
+  padding: 10px;
+  /* top: 50vh; */
   height: 50px;
   /* clear: both; */
   /* font-family: "worker, sans-serif"; */
-  font-weight: 200;
-  font-size: 2vw;
+  /* font-weight: 200; */
+  /* font-size: 2vw; */
 }
