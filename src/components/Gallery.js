@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Gallery.css";
+import "../App.css";
 
 const Gallery = props => {
   return (
