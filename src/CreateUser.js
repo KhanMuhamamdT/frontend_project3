@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./CreateUser.css";
+import "./App.css";
 
 const CreateUser = props => {
   const [name, setName] = useState("");

@@ -1,3 +1,24 @@
+.create-user-container,
+.create-post-container {
+  height: 80vh;
+}
+
+.custom-post-container,
+.custom-user-container {
+  height: 80vh;
+}
+
+.custom-post-photo,
+.custom-post-photo-img,
+.custom-user-photo,
+.custom-user-photo-img {
+  width: 100%;
+}
+
+.descr-box {
+  height: 30vh;
+}
+
 /* .App {
   text-align: center;
   display: flex;

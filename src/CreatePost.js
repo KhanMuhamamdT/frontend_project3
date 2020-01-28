@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./CreatePost.css";
+import "./App.css";
 
 const CreatePost = props => {
   const [title, setTitle] = useState("");
