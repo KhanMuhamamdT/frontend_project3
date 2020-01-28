@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "title": "Post 1",
+    "info": "Just a photo of laptops.",
+    "likes": 3,
+    "userid": {
+      "ref": "2"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "title": "Post 2",
+    "info": "The Matrix.",
+    "likes": 10,
+    "userid": {
+      "ref": "1"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1902&q=80",
+    "title": "Post 3",
+    "info": "Another laptop photo.",
+    "likes": 13,
+    "userid": {
+      "ref": "3"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1480506132288-68f7705954bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1993&q=80",
+    "title": "Post 4",
+    "info": "Keyboard shot.",
+    "likes": 9,
+    "userid": {
+      "ref": "1"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "title": "Post 5",
+    "info": "Coder life.",
+    "likes": 2,
+    "userid": {
+      "ref": "2"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "title": "Post 6",
+    "info": "Bunchacode.",
+    "likes": 6,
+    "userid": {
+      "ref": "4"
+    }
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "title": "Post 7",
+    "info": "The Office.",
+    "likes": 8,
+    "userid": {
+      "ref": "1"
+    }
+  }
+]

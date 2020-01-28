@@ -1,0 +1,34 @@
+[
+  {
+    "body": "This is a comment.",
+    "posts": [
+      {
+        "ref": "1"
+      }
+    ]
+  },
+  {
+    "body": "This is another comment.",
+    "posts": [
+      {
+        "ref": "1"
+      }
+    ]
+  },
+  {
+    "body": "This is a different comment.",
+    "posts": [
+      {
+        "ref": "2"
+      }
+    ]
+  },
+  {
+    "body": "This is a totally different comment.",
+    "posts": [
+      {
+        "ref": "3"
+      }
+    ]
+  }
+]
