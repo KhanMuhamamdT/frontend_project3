@@ -8,8 +8,6 @@ import Footer from "./components/Footer";
 import PostDetails from "./PostDetails";
 import UserDetails from "./UserDetails";
 
-
-
 const HomePage = () => {
   const urlUsers = "";
   const urlPosts = "";
@@ -18,25 +16,24 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  
 
-//useeffect
+  //useeffect
   //fetch api/posts/ to get posts
-//set posts as state.data
+  //set posts as state.data
 
-useEffect(() => {
-  fetch('http://localhost:8080/api/posts/')
-  .then(res => res.json())
-  .then(res => setPosts(res))
-  .catch(err => console.log(err))
-  fetch(`http://localhost:8080/api/comments/`)
-  .then(res => res.json())
-  .then(res => setComments(res))
-  .catch(err => console.log(err))
-},[])
+  useEffect(() => {
+    fetch("http://localhost:8080/api/posts/")
+      .then(res => res.json())
+      .then(res => setPosts(res))
+      .catch(err => console.log(err));
+    fetch(`http://localhost:8080/api/comments/`)
+      .then(res => res.json())
+      .then(res => setComments(res))
+      .catch(err => console.log(err));
+  }, []);
 
-//this fetch should bne in UserDetails
-//different fetch call on users page, to get only posts from that user
+  //this fetch should bne in UserDetails
+  //different fetch call on users page, to get only posts from that user
 
   // useEffect(() => {
   //   fetch(urlUsers)
@@ -55,13 +52,23 @@ useEffect(() => {
       <NavBar />
       {/* <Route path="/" component={NavBar} /> */}
       <div className="row">
-      <Route exact path="/" render={ (props) => <Gallery getPost={posts} {...props} />} />
+        <Route
+          exact
+          path="/"
+          render={props => <Gallery getPost={posts} {...props} />}
+        />
       </div>
       <Route exact path="/create-post" component={CreatePost} />
       <Route exact path="/create-user" component={CreateUser} />
+
       {/* <Route exact path="/postId" component={PostDetails} /> */}
-      <Route path='/:postID' render={ (props) => <PostDetails getPost={posts} {...props} /> } />
-      <Route exact path="/userId" component={UserDetails} />
+      <Route
+        exact
+        path="/posts/:postID"
+        render={props => <PostDetails getPost={posts} {...props} />}
+      />
+      <Route exact path="/users/:userId" component={UserDetails} />
+
       <Footer />
     </BrowserRouter>
   );

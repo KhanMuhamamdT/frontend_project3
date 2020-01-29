@@ -35,7 +35,7 @@ function PostDetails(props) {
           />
         </div>
         <div></div>
-        <div>{props.getPost[0].comments}</div>
+        <div>{x.comments}</div>
       </div>
     </div>
   );
