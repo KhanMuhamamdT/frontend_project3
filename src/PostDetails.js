@@ -10,7 +10,7 @@ function PostDetails(props) {
   return (
     <div className="container">
       <div className="custom-post-container shadow-lg p-3 my-3">
-  <h1>{props.getPost[0].title}</h1>
+  <h1>{props.getPost.title}</h1>
         <div className="custom-post-photo">
           
           <img
@@ -19,7 +19,7 @@ function PostDetails(props) {
           />
         </div>
   <div></div>
-  <div>{props.getPost[0].comments}</div>
+  <div>{props.getPost.comments}</div>
       </div>
     </div>
   );
