@@ -1,3 +1,73 @@
+.nav {
+  background-color: slategray;
+  color: white;
+}
+a {
+  color: white;
+}
+
+.avatar-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.post-thumb {
+  color: black;
+}
+
+.create-user-container,
+.create-post-container {
+  height: 80vh;
+}
+
+.custom-post-container,
+.custom-user-container {
+  height: 80vh;
+}
+
+.custom-post-photo,
+.custom-post-photo-img,
+.custom-user-photo,
+.custom-user-photo-img {
+  width: 100%;
+}
+
+.descr-box {
+  height: 30vh;
+}
+
+.custom-footer {
+  text-align: center;
+  background-color: slategray;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* flex-shrink: 0; */
+  /* margin-top: auto; */
+  padding: 10px;
+  /* top: 50vh; */
+  height: 50px;
+  /* clear: both; */
+  /* font-family: "worker, sans-serif"; */
+  /* font-weight: 200; */
+  /* font-size: 2vw; */
+}
+
+/* ---------------------------------------- */
+
 /* .App {
   text-align: center;
   display: flex;

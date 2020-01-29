@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./CreateUser.css";
+
+import "./App.css";
 
 const CreateUser = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [about, setAbout] = useState("");
-  //const [data, setData] = useState([])
 
   const handleName = e => {
     e.preventDefault();
@@ -21,20 +21,6 @@ const CreateUser = props => {
     e.preventDefault();
     setAbout(e.target.value);
   };
-
-
-  // const handleSubmit = inputData => {
-  //   fetch("http://localhost:3000/api/Users", {
-  //     body: JSON.stringify(inputData),
-  //     method: "post",
-  //     headers: {
-  //       Accept: "application/json, text/plain, */*",
-  //       "Content-Type": "application/json"
-  //     }
-  //   }).then(createUser => createUser.json());
-  //     data.push(inputData);
-  // };
-
 
   return (
     <div className="container">
