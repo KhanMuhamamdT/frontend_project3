@@ -6,12 +6,12 @@ function PostDetails(props) {
   // console.log("this is props", props)
   const [postDetail, setPostDetail] = useState([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`)
-      .then(res => res.JSON())
-      .then(res => setPostDetail(res))
-      .catch(err => console.log(err));
-  });
+  // useEffect(() => {
+  //   fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`)
+  //     .then(res => res.JSON())
+  //     .then(res => setPostDetail(res))
+  //     .catch(err => console.log(err));
+  // });
 
   if (props.getPost.length === 0) {
     return <div>Loading . . .</div>;
@@ -23,7 +23,12 @@ function PostDetails(props) {
       x = item;
     }
   });
-
+var currentComment = []
+  props.getComment.map(item => {
+    if (item.posts == props.match.params.postID) {
+      currentComment = item;
+    }
+  });
   return (
     <div className="container">
       <div className="custom-post-container shadow-lg p-3 my-3">
@@ -35,7 +40,7 @@ function PostDetails(props) {
           />
         </div>
         <div></div>
-        <div>{x.comments}</div>
+        <div>{currentComment.body}</div>
       </div>
     </div>
   );

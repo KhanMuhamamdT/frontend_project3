@@ -35,18 +35,6 @@ const HomePage = () => {
   //this fetch should bne in UserDetails
   //different fetch call on users page, to get only posts from that user
 
-  // useEffect(() => {
-  //   fetch(urlUsers)
-  //     .then(res => res.json())
-  //     .then(res => setCocktailDrinks(res))
-  //     .catch(err => console.log(err));
-
-  //   fetch(urlPosts)
-  //     .then(res1 => res1.json())
-  //     .then(res1 => setShotDrinks(res1))
-  //     .catch(err1 => console.log(err1));
-  // }, []);
-
   return (
     <BrowserRouter className="container">
       <NavBar />
@@ -65,7 +53,7 @@ const HomePage = () => {
       <Route
         exact
         path="/posts/:postID"
-        render={props => <PostDetails getPost={posts} {...props} />}
+        render={props => <PostDetails getComment = {comments} getPost={posts} {...props} />}
       />
       <Route exact path="/users/:userId" component={UserDetails} />
 
