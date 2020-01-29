@@ -21,13 +21,16 @@ const CreatePost = props => {
     e.preventDefault();
     setDescription(e.target.value);
   };
+const handleSubmit= () => {
+console.log('i am handle submit')
 
+}
   return (
     <div className="container ">
       <div className="shadow-lg p-3 create-post-container my-3">
         <h1>Create a post...</h1>
 
-        <form onSubmit={props.handleSubmit} className="column">
+        <form className="column">
           <div className="input-group my-3">
             <div className="input-group-prepend">
               {/* <label htmlform="title">Title:</label> */}
@@ -74,8 +77,8 @@ const CreatePost = props => {
             ></textarea>
           </div>
 
-          <button type="button" className="btn btn-success my-3">
-            SUBMIT
+          <button type="button" className="btn btn-success my-3" onClick ={ handleSubmit}>
+            SUBMIT 
           </button>
         </form>
       </div>

@@ -16,8 +16,8 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-
-  //useeffect
+  const [ userString, setuserString] = useState("5e31e279d146f26f8f01594c");
+  //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
 
