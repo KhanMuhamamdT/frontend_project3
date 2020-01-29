@@ -1,47 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import PostThumb from "./PostThumb";
 
 const Gallery = props => {
+  if (props.getPost.length === 0){
+    return <div>Loading......</div>
+  }
+  const post = props.getPost.map(item => {
+    return <PostThumb post = {item} /> 
+  })
+
   return (
-    <>
-      <div className="col-md-4 m-2">
-        {/* // <Link to={`/post/${props.posts.ObjectId}`} className=""> */}
-        <Link to="/postId" className="post-thumb card mb-4 shadow-sm">
-          {/* <img className="" src={props.posts.postURL} alt="" /> */}
-          <img
-            className=" card-img-top"
-            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1907&q=80"
-          />
-          <div className="card-body">
-            {/* <h4>{props.posts.title}</h4> */}
-            <h4 className="card-text">Post Title</h4>
-          </div>
-        </Link>
-      </div>
-      <div className="col-md-4 m-2">
-        <Link to="/postId" className="post-thumb card mb-4 shadow-sm">
-          <img
-            className=" card-img-top"
-            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1907&q=80"
-          />
-          <div className="card-body">
-            <h4 className="card-text">Post Title</h4>
-          </div>
-        </Link>
-      </div>
-      <div className="col-md-4 m-2">
-        <Link to="/postId" className="post-thumb card mb-4 shadow-sm">
-          <img
-            className=" card-img-top"
-            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1907&q=80"
-          />
-          <div className="card-body">
-            <h4 className="card-text">Post Title</h4>
-          </div>
-        </Link>
-      </div>
-    </>
+    <div>
+      {post}
+    </div>
   );
 };
 export default Gallery;

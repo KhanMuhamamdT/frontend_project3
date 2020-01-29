@@ -55,12 +55,12 @@ useEffect(() => {
       <NavBar />
       {/* <Route path="/" component={NavBar} /> */}
       <div className="row">
-        <Route exact path="/" component={Gallery} />
+      <Route exact path="/" render={ (props) => <Gallery getPost={posts} {...props} />} />
       </div>
       <Route exact path="/create-post" component={CreatePost} />
       <Route exact path="/create-user" component={CreateUser} />
       {/* <Route exact path="/postId" component={PostDetails} /> */}
-      <Route exact path='/postId' render={ (props) => <PostDetails getPost={posts} {...props} /> } />
+      <Route path='/:title' render={ (props) => <PostDetails getPost={posts} {...props} /> } />
       <Route exact path="/userId" component={UserDetails} />
       <Footer />
     </BrowserRouter>
