@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <nav className="nav">
       <div className="main-title nav-item nav-link ">Not Pinterest</div>
-      <NavLink exact className="nav-item nav-link" to="/user">
+      <NavLink exact className="nav-item nav-link" to="/userId">
         <div className="avatar">
           <img
             className="avatar-img"
