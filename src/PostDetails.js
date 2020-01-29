@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
 function PostDetails(props) {
   // console.log("this is props", props)
+  const [postDetail, setPostDetail] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`)
+    .then(res => res.JSON())
+    .then(res => setPostDetail(res))
+    .catch((err) => console.log(err))
+  })
   if(props.getPost.length === 0) {
     return <div>Loading . . .</div>
   }
   return (
     <div className="container">
       <div className="custom-post-container shadow-lg p-3 my-3">
-  <h1>{props.getPost[0].title}</h1>
+  <h1>{postDetail.title}</h1>
         <div className="custom-post-photo">
           
           <img
