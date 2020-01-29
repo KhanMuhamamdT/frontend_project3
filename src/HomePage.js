@@ -29,7 +29,7 @@ useEffect(() => {
   .then(res => res.json())
   .then(res => setPosts(res))
   .catch(err => console.log(err))
-  fetch('http://localhost:8080/api/comments')
+  fetch(`http://localhost:8080/api/comments/`)
   .then(res => res.json())
   .then(res => setComments(res))
   .catch(err => console.log(err))
