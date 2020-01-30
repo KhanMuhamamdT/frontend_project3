@@ -8,14 +8,9 @@ const parser = require("body-parser");
 const UpdateUser = props => {
   const [name, setName] = useState("");
   const [about, setAbout] = useState("");
-  
-
-
-
-
-  
 
   const handleName = e => {
+      console.log(name)
     e.preventDefault();
     setName(e.target.value);
   };
@@ -25,32 +20,21 @@ const UpdateUser = props => {
     setAbout(e.target.value);
   };
 
-  //var newUser = [];
-//   fetch('https://example.com/profile', {
-//     method: 'POST', // or 'PUT'
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//   })
-  
-
-   const handleUpdate = () => {
-     fetch(`http://localhost:8080/api/users/${initialID}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: initialName,
-        description: initialAbout
-      })
-    }).then(res => {
-      res.json();
-      console.log(res);
-    });
-     //console.log();
-};
+const handleUpdate = () => {
+    let input = 'http://localhost:8080/api/users/'+initialID
+    console.log("5e333ca29d52c11b27c76baa")
+    console.log(name)
+fetch(input, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: name,
+        description: about
+       })
+  })
+}
 
 let initialName = ""
 let initialAbout = ""
@@ -61,7 +45,6 @@ let initialID = ""
     initialAbout = props.users[0].description
     initialID = props.users[0]._id
     console.log(initialAbout)
-
 
   return (
     <div className="container">
