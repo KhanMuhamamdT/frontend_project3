@@ -4,17 +4,13 @@ import "../App.css";
 import PostThumb from "./PostThumb";
 
 const Gallery = props => {
-  if (props.getPost.length === 0){
-    return <div>Loading......</div>
+  if (props.getPost.length === 0) {
+    return <div>Loading......</div>;
   }
   const post = props.getPost.map(item => {
-    return <PostThumb post = {item} /> 
-  })
+    return <PostThumb post={item} />;
+  });
 
-  return (
-    <div>
-      {post}
-    </div>
-  );
+  return <div className="row">{post}</div>;
 };
 export default Gallery;

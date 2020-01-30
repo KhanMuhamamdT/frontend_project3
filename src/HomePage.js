@@ -16,7 +16,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const [ userString, setuserString] = useState("5e31e279d146f26f8f01594c");
+  const [userString, setuserString] = useState("5e31e279d146f26f8f01594c");
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
@@ -30,6 +30,10 @@ const HomePage = () => {
       .then(res => res.json())
       .then(res => setComments(res))
       .catch(err => console.log(err));
+    fetch("http://localhost:8080/api/users/")
+      .then(res => res.json())
+      .then(res => setUsers(res))
+      .catch(err => console.log(err));
   }, []);
 
   //this fetch should bne in UserDetails
@@ -39,7 +43,7 @@ const HomePage = () => {
     <BrowserRouter className="container">
       <NavBar />
       {/* <Route path="/" component={NavBar} /> */}
-      <div className="row">
+      <div className="container">
         <Route
           exact
           path="/"
@@ -53,7 +57,14 @@ const HomePage = () => {
       <Route
         exact
         path="/posts/:postID"
-        render={props => <PostDetails getComment = {comments} getPost={posts} {...props} />}
+        render={props => (
+          <PostDetails
+            comments={comments}
+            posts={posts}
+            users={users}
+            {...props}
+          />
+        )}
       />
       <Route exact path="/users/:userId" component={UserDetails} />
 

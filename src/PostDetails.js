@@ -13,21 +13,29 @@ function PostDetails(props) {
   //     .catch(err => console.log(err));
   // });
 
-  if (props.getPost.length === 0) {
+  if (props.posts.length === 0) {
     return <div>Loading . . .</div>;
   }
 
   var currentPost = [];
-  props.getPost.map(item => {
+  props.posts.map(item => {
     if (item._id == props.match.params.postID) {
       currentPost = item;
     }
   });
   var currentComment = [];
-  props.getComment.map(item => {
+  props.comments.map(item => {
     if (item.posts == props.match.params.postID) {
       currentComment = item;
     }
+  });
+  var currentUser = [];
+  props.users.map(user => {
+    user.myPosts.map(x => {
+      if (x == props.match.params.postID) {
+        currentUser = user;
+      }
+    });
   });
 
   return (
@@ -37,8 +45,15 @@ function PostDetails(props) {
         <div className="custom-post-photo">
           <img className="custom-post-photo-img" src={currentPost.url} />
         </div>
-        <div></div>
-        <div>{currentComment.body}</div>
+        <div>
+          <strong>User:</strong> {currentUser.name}
+        </div>
+        <div>
+          <strong>Info:</strong> {currentPost.info}
+        </div>
+        <div>
+          <strong>Comments:</strong> {currentComment.body}
+        </div>
       </div>
     </div>
   );
