@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./App.css";
 
@@ -12,6 +13,12 @@ function PostDetails(props) {
   //     .then(res => setPostDetail(res))
   //     .catch(err => console.log(err));
   // });
+
+  const handleDelete = () => {
+    fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`, {
+      method: "DELETE"
+    }).then(res => res.json());
+  };
 
   if (props.posts.length === 0) {
     return <div>Loading . . .</div>;
@@ -53,6 +60,17 @@ function PostDetails(props) {
         </div>
         <div>
           <strong>Comments:</strong> {currentComment.body}
+        </div>
+        <div className="d-flex justify-content-end">
+          <Link to="/">
+            <button
+              onClick={handleDelete}
+              type="button"
+              className="btn btn-danger"
+            >
+              DELETE
+            </button>
+          </Link>
         </div>
       </div>
     </div>
