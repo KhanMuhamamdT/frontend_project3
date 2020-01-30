@@ -17,27 +17,25 @@ function PostDetails(props) {
     return <div>Loading . . .</div>;
   }
 
-  var x = [];
+  var currentPost = [];
   props.getPost.map(item => {
     if (item._id == props.match.params.postID) {
-      x = item;
+      currentPost = item;
     }
   });
-var currentComment = []
+  var currentComment = [];
   props.getComment.map(item => {
     if (item.posts == props.match.params.postID) {
       currentComment = item;
     }
   });
+
   return (
     <div className="container">
       <div className="custom-post-container shadow-lg p-3 my-3">
-        <h1>{x.title}</h1>
+        <h1>{currentPost.title}</h1>
         <div className="custom-post-photo">
-          <img
-            className="custom-post-photo-img"
-            src="https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          />
+          <img className="custom-post-photo-img" src={currentPost.url} />
         </div>
         <div></div>
         <div>{currentComment.body}</div>

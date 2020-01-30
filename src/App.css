@@ -52,14 +52,13 @@ a {
   text-align: center;
   background-color: slategray;
   color: white;
-  position: relative;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
   width: 100%;
-  /* flex-shrink: 0; */
-  /* margin-top: auto; */
   padding: 10px;
-  /* top: 50vh; */
   height: 50px;
+  margin-top: 50px;
+  margin-bottom: 0;
   /* clear: both; */
   /* font-family: "worker, sans-serif"; */
   /* font-weight: 200; */
