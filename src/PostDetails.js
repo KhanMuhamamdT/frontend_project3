@@ -17,19 +17,19 @@ function PostDetails(props) {
     return <div>Loading . . .</div>;
   }
 
-  var currentPost = [];
+  var currentPost = {};
   props.posts.map(item => {
     if (item._id == props.match.params.postID) {
       currentPost = item;
     }
   });
-  var currentComment = [];
+  var currentComment = {};
   props.comments.map(item => {
     if (item.posts == props.match.params.postID) {
       currentComment = item;
     }
   });
-  var currentUser = [];
+  var currentUser = {};
   props.users.map(user => {
     user.myPosts.map(x => {
       if (x == props.match.params.postID) {

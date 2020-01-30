@@ -27,7 +27,7 @@ function NavBar() {
         >
           Create a User
         </NavLink>
-        <NavLink exact className="nav-item nav-link" to="/userId">
+        <NavLink exact className="nav-item nav-link" to="/users/:userID">
           <div className="avatar">
             <img
               className="avatar-img"

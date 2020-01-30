@@ -16,7 +16,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const [userString, setuserString] = useState("5e31e279d146f26f8f01594c");
+  const [userString, setuserString] = useState("5e3260c6764509202f7355bb");
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
@@ -68,8 +68,8 @@ const HomePage = () => {
       />
       <Route
         exact
-        path="/users/:userId"
-        render={props => <UserDetails user={userString} users={users} />}
+        path="/users/:userID"
+        render={props => <UserDetails userID={userString} users={users} />}
       />
 
       <Footer />
