@@ -30,7 +30,7 @@ const CreateUser = props => {
   var newUser = [];
 
   const handleSubmit = () => {
-    fetch("http://localhost:8080/api/users/", {
+    fetch("https://notpinterest.herokuapp.com/api/users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

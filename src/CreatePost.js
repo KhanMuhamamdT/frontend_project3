@@ -24,7 +24,7 @@ const CreatePost = props => {
   const handleSubmit = () => {
     console.log("i am handle submit");
 
-    fetch("http://localhost:8080/api/posts/", {
+    fetch("https://notpinterest.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const CreatePost = props => {
         url: url,
         info: info
       })
-    });
+    }).then(res => );
   };
 
   return (
