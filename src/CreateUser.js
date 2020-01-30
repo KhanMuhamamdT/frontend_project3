@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./App.css";
 
 const CreateUser = props => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [picURL, setPicURL] = useState("");
   const [about, setAbout] = useState("");
 
   const handleName = e => {
@@ -12,14 +13,28 @@ const CreateUser = props => {
     setName(e.target.value);
   };
 
-  const handleEmail = e => {
+  const handlePicURL = e => {
     e.preventDefault();
-    setEmail(e.target.value);
+    setPicURL(e.target.value);
   };
 
   const handleAbout = e => {
     e.preventDefault();
     setAbout(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    fetch("http://localhost:8080/api/users/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        description: about,
+        profilePicURL: picURL
+      })
+    });
   };
 
   return (
@@ -41,14 +56,13 @@ const CreateUser = props => {
           </div>
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="url">Email:</label> */}
-              <span className="input-group-text">Email: </span>
+              <span className="input-group-text">Pic URL: </span>
             </div>
             <input
               className="form-control"
-              value={email}
+              value={picURL}
               type="text"
-              onChange={e => handleEmail(e)}
+              onChange={e => handlePicURL(e)}
             ></input>
           </div>
           <div className="input-group my-3">
@@ -63,9 +77,15 @@ const CreateUser = props => {
               onChange={e => handleAbout(e)}
             ></textarea>
           </div>
-          <button type="button" className="btn btn-success my-3">
-            SUBMIT
-          </button>
+          <Link to="/">
+            <button
+              type="button"
+              className="btn btn-success my-3"
+              onClick={handleSubmit}
+            >
+              SUBMIT
+            </button>
+          </Link>
         </form>
       </div>
     </div>

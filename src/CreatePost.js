@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./App.css";
 
 const CreatePost = props => {
@@ -21,21 +21,21 @@ const CreatePost = props => {
     e.preventDefault();
     setInfo(e.target.value);
   };
-const handleSubmit= () => {
-console.log('i am handle submit')
+  const handleSubmit = () => {
+    console.log("i am handle submit");
 
-fetch('http://localhost:8080/api/posts/', { method:'POST',
-headers: {
-  "Content-Type": "application/json"
-},
-body: JSON.stringify({
-  title: title,
-  url: url,
-  info: info
-})
-})
-// .then(res => res.redirect('/'))
- }
+    fetch("http://localhost:8080/api/posts/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: title,
+        url: url,
+        info: info
+      })
+    });
+  };
 
   return (
     <div className="container ">
@@ -89,9 +89,15 @@ body: JSON.stringify({
             ></textarea>
           </div>
 
-           <Link to='/'> <button type="button" className="btn btn-success my-3" onClick ={handleSubmit}>
-            SUBMIT 
-           </button>
+          <Link to="/">
+            {" "}
+            <button
+              type="button"
+              className="btn btn-success my-3"
+              onClick={handleSubmit}
+            >
+              SUBMIT
+            </button>
           </Link>
         </form>
       </div>
