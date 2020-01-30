@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./App.css";
 
@@ -14,7 +15,14 @@ const UserDetails = props => {
     return <div>Loading . . .</div>;
   }
 
-  console.log(thisUser.myPosts[0]);
+  var userPosts = [];
+  props.posts.map(item => {
+    if (item._id == thisUser.myPosts[0]) {
+      userPosts = item;
+    }
+  });
+
+  console.log(userPosts);
 
   return (
     <div className="container">
@@ -35,10 +43,17 @@ const UserDetails = props => {
         </div>
         <div>
           <strong>Posts: </strong> <br />
-          <ul>
-            {thisUser.myPosts[0] ? <div></div> : <li>{thisUser.myPosts[0]}</li>}
+          <Link to={`/posts/${userPosts._id}`} className="custom-post-links">
+            <div>{userPosts.title}</div>
+          </Link>
+          {/* <ul className="custom-post-list">
+            {thisUser.myPosts[0] ? (
+              <div></div>
+            ) : (
+              <li>post 1{thisUser.myPosts[0]}</li>
+            )}
             {thisUser.myPosts[1] ? <div></div> : <li>{thisUser.myPosts[1]}</li>}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>

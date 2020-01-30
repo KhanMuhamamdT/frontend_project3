@@ -5,6 +5,9 @@
 a {
   color: white;
 }
+.custom-post-links {
+  color: black;
+}
 .custom-nav-brand {
   font-weight: 800;
   font-size: 180%;
@@ -32,6 +35,10 @@ a {
 }
 
 .post-thumb {
+  color: black;
+}
+
+.custom-post-list {
   color: black;
 }
 
