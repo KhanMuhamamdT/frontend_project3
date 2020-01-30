@@ -12,9 +12,6 @@ function NavBar() {
         <NavLink exact className="nav-item nav-link custom-nav-item" to="/">
           Home
         </NavLink>
-        <NavLink className="nav-item nav-link custom-nav-item" to="/random">
-          Random
-        </NavLink>
         <NavLink
           className="nav-item nav-link custom-nav-item"
           to="/create-post"

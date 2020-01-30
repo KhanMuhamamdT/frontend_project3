@@ -22,15 +22,15 @@ const HomePage = () => {
   //set posts as state.data
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/posts/")
+    fetch("https://notpinterest.herokuapp.com/api/posts")
       .then(res => res.json())
       .then(res => setPosts(res))
       .catch(err => console.log(err));
-    fetch(`http://localhost:8080/api/comments/`)
+    fetch("https://notpinterest.herokuapp.com/api/comments")
       .then(res => res.json())
       .then(res => setComments(res))
       .catch(err => console.log(err));
-    fetch("http://localhost:8080/api/users/")
+    fetch("https://notpinterest.herokuapp.com/api/users")
       .then(res => res.json())
       .then(res => setUsers(res))
       .catch(err => console.log(err));
