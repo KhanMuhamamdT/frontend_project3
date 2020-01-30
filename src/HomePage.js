@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import PostDetails from "./PostDetails";
 import UserDetails from "./UserDetails";
+import UpdateUser from "./components/UpdateUser";
 
 const HomePage = () => {
   const urlUsers = "";
@@ -16,7 +17,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const [userID, setUserID] = useState("5e331dee3e90e9432fd67a3d");
+  const [userID, setUserID] = useState("5e333ca29d52c11b27c76baa");
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
@@ -72,6 +73,14 @@ const HomePage = () => {
         path="/users/:userID"
         render={props => (
           <UserDetails userID={userID} users={users} posts={posts} />
+        )}
+      />
+
+<Route
+        exact
+        path="/UpdateUser/:userID"
+        render={props => (
+          <UpdateUser userID={userID} users={users} posts={posts} />
         )}
       />
 
