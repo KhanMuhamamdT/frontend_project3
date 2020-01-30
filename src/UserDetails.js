@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 const UserDetails = props => {
+  if (props.users.length === 0) {
+    return <div>Loading . . .</div>;
+  }
+
   var thisUser = {};
   props.users.map(item => {
     if (props.userID == item._id) {
@@ -11,16 +15,12 @@ const UserDetails = props => {
     }
   });
 
-  if (props.users.length === 0) {
-    return <div>Loading . . .</div>;
-  }
-
   var userPosts = [];
-  props.posts.map(item => {
-    if (item._id == thisUser.myPosts[0]) {
-      userPosts = item;
-    }
-  });
+  // props.posts.map(item => {
+  //   if (item._id === thisUser.myPosts[0]) {
+  //     userPosts = item;
+  //   }
+  // });
 
   console.log(userPosts);
 
