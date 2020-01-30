@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
+import {Link} from "react-router-dom"
 import "./App.css";
 
 const CreatePost = props => {
   const [title, setTitle] = useState("");
   const [url, setURL] = useState("");
-  const [description, setDescription] = useState("");
+  const [info, setInfo] = useState("");
 
   const handleTitle = e => {
     e.preventDefault();
@@ -17,14 +17,26 @@ const CreatePost = props => {
     setURL(e.target.value);
   };
 
-  const handleDescription = e => {
+  const handleInfo = e => {
     e.preventDefault();
-    setDescription(e.target.value);
+    setInfo(e.target.value);
   };
 const handleSubmit= () => {
 console.log('i am handle submit')
 
-}
+fetch('http://localhost:8080/api/posts/', { method:'POST',
+headers: {
+  "Content-Type": "application/json"
+},
+body: JSON.stringify({
+  title: title,
+  url: url,
+  info: info
+})
+})
+// .then(res => res.redirect('/'))
+ }
+
   return (
     <div className="container ">
       <div className="shadow-lg p-3 create-post-container my-3">
@@ -66,20 +78,21 @@ console.log('i am handle submit')
                 className="input-group-text descr-box"
                 htmlform="description"
               >
-                Description:{" "}
+                info:{" "}
               </span>
             </div>
             <textarea
-              value={description}
+              value={info}
               type="text"
               className="form-control"
-              onChange={e => handleDescription(e)}
+              onChange={e => handleInfo(e)}
             ></textarea>
           </div>
 
-          <button type="button" className="btn btn-success my-3" onClick ={ handleSubmit}>
+           <Link to='/'> <button type="button" className="btn btn-success my-3" onClick ={handleSubmit}>
             SUBMIT 
-          </button>
+           </button>
+          </Link>
         </form>
       </div>
     </div>
