@@ -33,7 +33,6 @@ function NavBar() {
             />
           </div>
         </NavLink>
-        {/* <Search searchFunc={searchFunc.searchFunc} /> */}
       </div>
     </nav>
   );

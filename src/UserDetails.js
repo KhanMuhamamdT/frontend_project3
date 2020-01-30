@@ -35,6 +35,7 @@ const UserDetails = props => {
               src={thisUser.profilePicURL}
             />
           </div>
+
           <div className="pt-4">
             {" "}
             <strong>About me: </strong>
