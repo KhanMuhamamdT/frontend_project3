@@ -66,7 +66,11 @@ const HomePage = () => {
           />
         )}
       />
-      <Route exact path="/users/:userId" component={UserDetails} />
+      <Route
+        exact
+        path="/users/:userId"
+        render={props => <UserDetails user={userString} users={users} />}
+      />
 
       <Footer />
     </BrowserRouter>

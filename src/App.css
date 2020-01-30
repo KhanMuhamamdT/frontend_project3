@@ -5,6 +5,14 @@
 a {
   color: white;
 }
+.custom-nav-brand {
+  font-weight: 800;
+  font-size: 180%;
+}
+.custom-nav-item {
+  margin-top: 8px;
+  font-size: 130%;
+}
 
 .avatar-img {
   height: 100%;
@@ -42,6 +50,7 @@ a {
 .custom-user-photo,
 .custom-user-photo-img {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .descr-box {

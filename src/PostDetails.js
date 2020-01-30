@@ -7,13 +7,6 @@ function PostDetails(props) {
   // console.log("this is props", props)
   const [postDetail, setPostDetail] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`)
-  //     .then(res => res.JSON())
-  //     .then(res => setPostDetail(res))
-  //     .catch(err => console.log(err));
-  // });
-
   const handleDelete = () => {
     fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`, {
       method: "DELETE"
