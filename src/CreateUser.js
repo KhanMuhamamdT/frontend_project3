@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 import "./App.css";
 
+const parser = require("body-parser");
+
 const CreateUser = props => {
   const [name, setName] = useState("");
   const [picURL, setPicURL] = useState("");
   const [about, setAbout] = useState("");
+  // const [id, setID] = useState("");
+  // const [newUser, setNewUser] = useState({});
 
   const handleName = e => {
     e.preventDefault();
@@ -23,6 +27,8 @@ const CreateUser = props => {
     setAbout(e.target.value);
   };
 
+  var newUser = [];
+
   const handleSubmit = () => {
     fetch("http://localhost:8080/api/users/", {
       method: "POST",
@@ -34,7 +40,11 @@ const CreateUser = props => {
         description: about,
         profilePicURL: picURL
       })
+    }).then(res => {
+      res.json();
+      console.log(res);
     });
+    // console.log(newUser);
   };
 
   return (
@@ -77,7 +87,8 @@ const CreateUser = props => {
               onChange={e => handleAbout(e)}
             ></textarea>
           </div>
-          <Link to="/">
+          {/* <Link to={`/users/${newUser._id}`}> */}
+          <Link to={`/{:userID}`}>
             <button
               type="button"
               className="btn btn-success my-3"

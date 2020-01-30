@@ -16,7 +16,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const [userString, setuserString] = useState("5e331b3e3e90e9432fd67a3c");
+  const [userID, setUserID] = useState("5e331dee3e90e9432fd67a3d");
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
@@ -62,6 +62,7 @@ const HomePage = () => {
             comments={comments}
             posts={posts}
             users={users}
+            useEffect={useEffect}
             {...props}
           />
         )}
@@ -70,7 +71,7 @@ const HomePage = () => {
         exact
         path="/users/:userID"
         render={props => (
-          <UserDetails userID={userString} users={users} posts={posts} />
+          <UserDetails userID={userID} users={users} posts={posts} />
         )}
       />
 
