@@ -14,8 +14,10 @@ const UpdateUser = props => {
     e.preventDefault();
     setAbout(e.target.value);
   };
+
   const handleUpdate = () => {
-    props.handlePagechange();
+    props.handlePageChanged();
+
     let input = `https://notpinterest.herokuapp.com/api/users/${initialID}`;
     fetch(input, {
       method: "PUT",
