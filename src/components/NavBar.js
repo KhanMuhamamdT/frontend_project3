@@ -7,7 +7,6 @@ function NavBar(props) {
   return (
     <nav className="nav">
       <div className="custom-nav-brand nav-item nav-link ">Not Pinterest</div>
-
       <div className="d-flex justify-content-end custom-nav">
         <NavLink exact className="nav-item nav-link custom-nav-item" to="/">
           Home

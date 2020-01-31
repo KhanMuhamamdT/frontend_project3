@@ -22,8 +22,6 @@ const CreatePost = props => {
     setInfo(e.target.value);
   };
   const handleSubmit = () => {
-    console.log("i am handle submit");
-
     fetch("https://notpinterest.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {
@@ -45,7 +43,6 @@ const CreatePost = props => {
         <form className="column">
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="title">Title:</label> */}
               <span className="input-group-text" htmlform="title">
                 Title:{" "}
               </span>
@@ -59,7 +56,6 @@ const CreatePost = props => {
           </div>
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="url">URL:</label> */}
               <span className="input-group-text" htmlform="url">
                 URL:{" "}
               </span>
@@ -73,7 +69,6 @@ const CreatePost = props => {
           </div>
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="Description">Description:</label> */}
               <span
                 className="input-group-text descr-box"
                 htmlform="description"
