@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./App.css";
 
-const parser = require("body-parser");
-
 const CreateUser = props => {
   const [name, setName] = useState("");
   const [picURL, setPicURL] = useState("");
@@ -40,11 +38,7 @@ const CreateUser = props => {
         description: about,
         profilePicURL: picURL
       })
-    }).then(res => {
-      res.json();
-      console.log(res);
     });
-    // console.log(newUser);
   };
 
   return (
@@ -54,11 +48,11 @@ const CreateUser = props => {
         <form onSubmit={props.handleSubmit}>
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="title">Name:</label> */}
               <span className="input-group-text">Name: </span>
             </div>
             <input
               className="form-control"
+              id="name-input"
               value={name}
               type="text"
               onChange={e => handleName(e)}
@@ -77,7 +71,6 @@ const CreateUser = props => {
           </div>
           <div className="input-group my-3">
             <div className="input-group-prepend">
-              {/* <label htmlform="Description">About you...</label> */}
               <span className="input-group-text descr-box">About you: </span>
             </div>
             <textarea
@@ -87,7 +80,6 @@ const CreateUser = props => {
               onChange={e => handleAbout(e)}
             ></textarea>
           </div>
-          {/* <Link to={`/users/${newUser._id}`}> */}
           <Link to={`/`}>
             <button
               type="button"
