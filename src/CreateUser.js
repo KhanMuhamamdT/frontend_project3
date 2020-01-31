@@ -88,7 +88,7 @@ const CreateUser = props => {
             ></textarea>
           </div>
           {/* <Link to={`/users/${newUser._id}`}> */}
-          <Link to={`/{:userID}`}>
+          <Link to={`/`}>
             <button
               type="button"
               className="btn btn-success my-3"

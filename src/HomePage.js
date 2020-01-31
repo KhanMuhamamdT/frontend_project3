@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import PostDetails from "./PostDetails";
 import UserDetails from "./UserDetails";
+import UpdateUser from "./components/UpdateUser";
 
 const HomePage = () => {
   const urlUsers = "";
@@ -16,7 +17,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const [userID, setUserID] = useState("5e3260c6764509202f7355bb");
+  const [userID, setUserID] = useState("5e334f250840630004a420be");
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
@@ -36,12 +37,16 @@ const HomePage = () => {
       .catch(err => console.log(err));
   }, []);
 
+  const userIdChange = newID => {
+    setUserID(newID);
+  };
+
   //this fetch should bne in UserDetails
   //different fetch call on users page, to get only posts from that user
 
   return (
     <BrowserRouter className="container">
-      <NavBar />
+      <Route path="/" render={props => <NavBar userID={userID} {...props} />} />
       {/* <Route path="/" component={NavBar} /> */}
       <div className="container">
         <Route
@@ -63,6 +68,19 @@ const HomePage = () => {
             posts={posts}
             users={users}
             useEffect={useEffect}
+            {...props}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/update-user/:userID"
+        render={props => (
+          <UpdateUser
+            userID={userID}
+            posts={posts}
+            users={users}
+            userIdChange={userIdChange}
             {...props}
           />
         )}

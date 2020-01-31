@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "../App.css";
 
-function NavBar() {
+function NavBar(props) {
   return (
     <nav className="nav">
       <div className="custom-nav-brand nav-item nav-link ">Not Pinterest</div>
@@ -24,7 +24,11 @@ function NavBar() {
         >
           Create a User
         </NavLink>
-        <NavLink exact className="nav-item nav-link" to="/users/:userID">
+        <NavLink
+          exact
+          className="nav-item nav-link"
+          to={`/users/${props.userID}`}
+        >
           <div className="avatar">
             <img
               className="avatar-img"

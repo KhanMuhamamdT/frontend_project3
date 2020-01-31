@@ -22,7 +22,7 @@ const UserDetails = props => {
   //   }
   // });
 
-  console.log(userPosts);
+  console.log(thisUser);
 
   return (
     <div className="container">
@@ -56,6 +56,11 @@ const UserDetails = props => {
             {thisUser.myPosts[1] ? <div></div> : <li>{thisUser.myPosts[1]}</li>}
           </ul> */}
         </div>
+        <Link to={`/update-user/${thisUser._id}`}>
+          <button type="button" className="btn btn-success my-3">
+            UPDATE
+          </button>
+        </Link>
       </div>
     </div>
   );

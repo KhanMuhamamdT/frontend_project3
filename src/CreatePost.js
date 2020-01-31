@@ -34,7 +34,7 @@ const CreatePost = props => {
         url: url,
         info: info
       })
-    }).then(res => );
+    });
   };
 
   return (
