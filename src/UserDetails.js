@@ -57,7 +57,7 @@ const UserDetails = props => {
           </ul> */}
         </div>
         <Link to={`/update-user/${thisUser._id}`}>
-          <button type="button" className="btn btn-success my-3">
+          <button type="button" className="btn btn-warning my-3">
             UPDATE
           </button>
         </Link>

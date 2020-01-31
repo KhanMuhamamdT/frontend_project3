@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 function PostDetails(props) {
-  // console.log("this is props", props)
   const [postDetail, setPostDetail] = useState([]);
 
   const handleDelete = () => {

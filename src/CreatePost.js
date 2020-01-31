@@ -51,6 +51,7 @@ const CreatePost = props => {
               value={title}
               type="text"
               className="form-control"
+              id="title-input"
               onChange={e => handleTitle(e)}
             ></input>
           </div>

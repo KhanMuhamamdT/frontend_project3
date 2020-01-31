@@ -10,19 +10,22 @@ import UserDetails from "./UserDetails";
 import UpdateUser from "./components/UpdateUser";
 
 const HomePage = () => {
-  const urlUsers = "";
-  const urlPosts = "";
-  const urlComments = "";
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
-  const [searchString, setSearchString] = useState("");
+
+  const [change, setChange] = useState(false);
+
   const [userID, setUserID] = useState("5e334f250840630004a420be");
+  const handlePagechange = () => {
+    setChange(!change);
+  };
   //use effect
   //fetch api/posts/ to get posts
   //set posts as state.data
-
+  console.log("Comonent is loading");
   useEffect(() => {
+    console.log("Home page useeffect loading");
     fetch("https://notpinterest.herokuapp.com/api/posts")
       .then(res => res.json())
       .then(res => setPosts(res))
@@ -41,13 +44,9 @@ const HomePage = () => {
     setUserID(newID);
   };
 
-  //this fetch should bne in UserDetails
-  //different fetch call on users page, to get only posts from that user
-
   return (
     <BrowserRouter className="container">
       <Route path="/" render={props => <NavBar userID={userID} {...props} />} />
-      {/* <Route path="/" component={NavBar} /> */}
       <div className="container">
         <Route
           exact
@@ -58,7 +57,6 @@ const HomePage = () => {
       <Route exact path="/create-post" component={CreatePost} />
       <Route exact path="/create-user" component={CreateUser} />
 
-      {/* <Route exact path="/postId" component={PostDetails} /> */}
       <Route
         exact
         path="/posts/:postID"
@@ -80,6 +78,7 @@ const HomePage = () => {
             userID={userID}
             posts={posts}
             users={users}
+            handlePagechange={handlePagechange}
             userIdChange={userIdChange}
             {...props}
           />

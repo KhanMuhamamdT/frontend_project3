@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import "../App.css";
 
 const parser = require("body-parser");
-
 const UpdateUser = props => {
-  const [name, setName] = useState("");
-  const [about, setAbout] = useState("");
-
-  const handleName = e => {
-    console.log(name);
+const [name, setName] = useState(props.name);
+const [about, setAbout] = useState(props.description);
+const handleName = e => {
     e.preventDefault();
     setName(e.target.value);
   };
@@ -19,13 +15,10 @@ const UpdateUser = props => {
     e.preventDefault();
     setAbout(e.target.value);
   };
-
   const handleUpdate = () => {
-    let input = "https://notpinterest.herokuapp.com/api/users/" + initialID;
-
-    console.log("5e333ca29d52c11b27c76baa");
-    console.log(name);
-    fetch(input, {
+  props.handlePagechange()
+    let input = `https://notpinterest.herokuapp.com/api/users/${initialID}`;
+      fetch(input, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -45,8 +38,6 @@ const UpdateUser = props => {
     initialName = props.users[0].name;
     initialAbout = props.users[0].description;
     initialID = props.users[0]._id;
-    console.log(initialAbout);
-
     return (
       <div className="container">
         <div className="shadow-lg p-3 create-post-container my-3">
