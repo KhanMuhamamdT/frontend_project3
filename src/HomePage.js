@@ -13,9 +13,19 @@ const HomePage = () => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
-  const [userID, setUserID] = useState("5e334f250840630004a420be");
 
+  const [change, setChange] = useState(false);
+
+  const [userID, setUserID] = useState("5e334f250840630004a420be");
+  const handlePagechange = () => {
+    setChange(!change);
+  };
+  //use effect
+  //fetch api/posts/ to get posts
+  //set posts as state.data
+  console.log("Comonent is loading");
   useEffect(() => {
+    console.log("Home page useeffect loading");
     fetch("https://notpinterest.herokuapp.com/api/posts")
       .then(res => res.json())
       .then(res => setPosts(res))
@@ -68,6 +78,7 @@ const HomePage = () => {
             userID={userID}
             posts={posts}
             users={users}
+            handlePagechange={handlePagechange}
             userIdChange={userIdChange}
             {...props}
           />
