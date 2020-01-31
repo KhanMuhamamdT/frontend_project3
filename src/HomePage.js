@@ -20,12 +20,8 @@ const HomePage = () => {
   const handlePagechange = () => {
     setChange(!change);
   };
-  //use effect
-  //fetch api/posts/ to get posts
-  //set posts as state.data
-  console.log("Comonent is loading");
+
   useEffect(() => {
-    console.log("Home page useeffect loading");
     fetch("https://notpinterest.herokuapp.com/api/posts")
       .then(res => res.json())
       .then(res => setPosts(res))

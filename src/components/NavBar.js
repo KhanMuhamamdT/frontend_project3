@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "../App.css";
 
-function NavBar(props) {
+const NavBar = props => {
   return (
     <nav className="nav">
       <div className="custom-nav-brand nav-item nav-link ">Not Pinterest</div>
@@ -39,6 +39,6 @@ function NavBar(props) {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;

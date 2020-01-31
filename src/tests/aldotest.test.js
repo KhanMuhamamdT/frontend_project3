@@ -51,7 +51,17 @@ describe("Gallery component", () => {
   beforeEach(() => {
     component = shallow(<Gallery post={"This post"} />);
   });
-  it("should have a props called post", () => {
-    expect(component.contains("This post")).toBe(true);
+  //   it("should have a props called post", () => {
+  //     expect(component.contains("This post")).toBe(true);
+  //   });
+});
+
+describe("NavBar component", () => {
+  let component;
+  beforeEach(() => {
+    component = shallow(<NavBar />);
   });
+  //   it("should have a link to user", () => {
+  //     expect(component.contains(<a>Create a User</a>)).toBe(true);
+  //   });
 });

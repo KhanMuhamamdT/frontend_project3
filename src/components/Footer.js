@@ -2,7 +2,7 @@ import React from "react";
 
 import "../App.css";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="footer custom-footer">
       <div className="container">
@@ -13,6 +13,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
