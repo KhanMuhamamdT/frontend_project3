@@ -94,7 +94,7 @@ const CreateUser = props => {
               className="btn btn-success my-3"
               onClick={handleSubmit}
             >
-              SUBMIT
+              CREATE
             </button>
           </Link>
         </form>

@@ -9,7 +9,7 @@ function PostDetails(props) {
 
   const handleDelete = () => {
     fetch(
-      `http://www.notpinterest.herokuapp.com/api/posts/${props.match.params.postID}`,
+      `http://notpinterest.herokuapp.com/api/posts/${props.match.params.postID}`,
       {
         method: "DELETE"
       }
