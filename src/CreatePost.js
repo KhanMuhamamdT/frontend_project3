@@ -22,6 +22,8 @@ const CreatePost = props => {
     setInfo(e.target.value);
   };
   const handleSubmit = () => {
+    props.handlePageChanged();
+
     fetch("https://notpinterest.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {

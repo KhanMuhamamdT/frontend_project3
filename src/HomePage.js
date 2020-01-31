@@ -14,12 +14,9 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const [change, setChange] = useState(false);
+  const [changed, setChanged] = useState(false);
 
   const [userID, setUserID] = useState("5e334f250840630004a420be");
-  const handlePagechange = () => {
-    setChange(!change);
-  };
 
   useEffect(() => {
     fetch("https://notpinterest.herokuapp.com/api/posts")
@@ -40,6 +37,11 @@ const HomePage = () => {
     setUserID(newID);
   };
 
+  const handlePageChanged = () => {
+    setChanged(!changed);
+    console.log(changed);
+  };
+
   return (
     <BrowserRouter className="container">
       <Route path="/" render={props => <NavBar userID={userID} {...props} />} />
@@ -50,7 +52,13 @@ const HomePage = () => {
           render={props => <Gallery getPost={posts} {...props} />}
         />
       </div>
-      <Route exact path="/create-post" component={CreatePost} />
+      <Route
+        exact
+        path="/create-post"
+        render={props => (
+          <CreatePost handlePageChanged={handlePageChanged} {...props} />
+        )}
+      />
       <Route exact path="/create-user" component={CreateUser} />
 
       <Route
@@ -74,7 +82,7 @@ const HomePage = () => {
             userID={userID}
             posts={posts}
             users={users}
-            handlePagechange={handlePagechange}
+            handlePageChanged={handlePageChanged}
             userIdChange={userIdChange}
             {...props}
           />

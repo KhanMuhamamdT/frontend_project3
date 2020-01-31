@@ -22,8 +22,6 @@ const UserDetails = props => {
   //   }
   // });
 
-  console.log(thisUser);
-
   return (
     <div className="container">
       <div className="custom-user-container shadow-lg p-3 my-3">
