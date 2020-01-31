@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
-const parser = require("body-parser");
 const UpdateUser = props => {
-const [name, setName] = useState(props.name);
-const [about, setAbout] = useState(props.description);
-const handleName = e => {
+  const [name, setName] = useState(props.name);
+  const [about, setAbout] = useState(props.description);
+  const handleName = e => {
     e.preventDefault();
     setName(e.target.value);
   };
@@ -16,9 +15,9 @@ const handleName = e => {
     setAbout(e.target.value);
   };
   const handleUpdate = () => {
-  props.handlePagechange()
+    props.handlePagechange();
     let input = `https://notpinterest.herokuapp.com/api/users/${initialID}`;
-      fetch(input, {
+    fetch(input, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./App.css";
 
 function PostDetails(props) {
-  const [postDetail, setPostDetail] = useState([]);
+  // const [postDetail, setPostDetail] = useState([]);
 
   const handleDelete = () => {
     fetch(
@@ -21,23 +21,30 @@ function PostDetails(props) {
 
   var currentPost = {};
   props.posts.map(item => {
-    if (item._id == props.match.params.postID) {
+    if (item._id === props.match.params.postID) {
       currentPost = item;
+      return currentPost;
     }
+    return null;
   });
   var currentComment = {};
   props.comments.map(item => {
-    if (item.posts == props.match.params.postID) {
+    if (item.posts === props.match.params.postID) {
       currentComment = item;
+      return currentComment;
     }
+    return null;
   });
   var currentUser = {};
   props.users.map(user => {
-    user.myPosts.map(x => {
-      if (x == props.match.params.postID) {
+    user.myPosts.map(post => {
+      if (post === props.match.params.postID) {
         currentUser = user;
+        return currentUser;
       }
+      return null;
     });
+    return currentUser;
   });
 
   return (
@@ -45,7 +52,7 @@ function PostDetails(props) {
       <div className="custom-post-container shadow-lg p-3 my-3">
         <h1>{currentPost.title}</h1>
         <div className="custom-post-photo">
-          <img className="custom-post-photo-img" src={currentPost.url} />
+          <img className="custom-post-photo-img" src={currentPost.url} alt="" />
         </div>
         <div>
           <strong>User:</strong> {currentUser.name}

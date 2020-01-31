@@ -31,7 +31,7 @@ const HomePage = () => {
       .then(res => res.json())
       .then(res => setUsers(res))
       .catch(err => console.log(err));
-  }, []);
+  }, [changed]);
 
   const userIdChange = newID => {
     setUserID(newID);

@@ -10,9 +10,11 @@ const UserDetails = props => {
 
   var thisUser = {};
   props.users.map(item => {
-    if (props.userID == item._id) {
+    if (props.userID === item._id) {
       thisUser = item;
+      return thisUser;
     }
+    return null;
   });
 
   var userPosts = [];
@@ -31,6 +33,7 @@ const UserDetails = props => {
             <img
               className="custom-post-photo-img"
               src={thisUser.profilePicURL}
+              alt=""
             />
           </div>
 

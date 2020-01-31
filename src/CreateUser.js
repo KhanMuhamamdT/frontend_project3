@@ -25,8 +25,6 @@ const CreateUser = props => {
     setAbout(e.target.value);
   };
 
-  var newUser = [];
-
   const handleSubmit = () => {
     fetch("https://notpinterest.herokuapp.com/api/users/", {
       method: "POST",
