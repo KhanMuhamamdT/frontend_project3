@@ -8,9 +8,12 @@ function PostDetails(props) {
   const [postDetail, setPostDetail] = useState([]);
 
   const handleDelete = () => {
-    fetch(`http://localhost:8080/api/posts/${props.match.params.postID}`, {
-      method: "DELETE"
-    }).then(res => res.json());
+    fetch(
+      `http://www.notpinterest.herokuapp.com/api/posts/${props.match.params.postID}`,
+      {
+        method: "DELETE"
+      }
+    ).then(res => res.json());
   };
 
   if (props.posts.length === 0) {

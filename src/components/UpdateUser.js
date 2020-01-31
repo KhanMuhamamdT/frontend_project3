@@ -22,6 +22,7 @@ const UpdateUser = props => {
 
   const handleUpdate = () => {
     let input = "https://notpinterest.herokuapp.com/api/users/" + initialID;
+
     console.log("5e333ca29d52c11b27c76baa");
     console.log(name);
     fetch(input, {
